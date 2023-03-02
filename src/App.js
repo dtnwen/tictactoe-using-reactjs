@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const App = () => {
   const [turn, setTurn] = useState(false);
+    const [value, setValue] = useState()
 
   return (
     <div>
@@ -27,21 +28,20 @@ const App = () => {
 
 export default App;
 
-const Square = ({turn, setTurn}) => {
+const Square = ({ turn, setTurn }) => {
   const [value, setValue] = useState({
     value: null,
-    isClick: false
+    isClick: false,
   });
 
   const clickHandle = () => {
     if (!value.isClick) {
-        if (turn) {
-            setValue({value: "O", isClick: true})
-        }
-        else {
-            setValue({value: "X", isClick: true})
-        }
-        setTurn(!turn)
+      if (turn) {
+        setValue({ value: "O", isClick: true });
+      } else {
+        setValue({ value: "X", isClick: true });
+      }
+      setTurn(!turn);
     }
   };
 
